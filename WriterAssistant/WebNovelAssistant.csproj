@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <StartupObject>WebNovelAssistant.Program</StartupObject>
+    <ApplicationIcon>DFTRIBE.ico</ApplicationIcon>
+    <AssemblyName>WebNovelAssistant</AssemblyName>
+    <RootNamespace>WebNovelAssistant</RootNamespace>
+  </PropertyGroup>
+
+</Project>
