@@ -31,8 +31,10 @@ namespace WebNovelAssistant
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Title");
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Basics", new System.Windows.Forms.TreeNode[] {
-            treeNode1});
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Logline");
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Basics", new System.Windows.Forms.TreeNode[] {
+            treeNode1,
+            treeNode2});
             this.ms_MainMenu = new System.Windows.Forms.MenuStrip();
             this.tsmi_File = new System.Windows.Forms.ToolStripMenuItem();
             this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -63,10 +65,15 @@ namespace WebNovelAssistant
             this.searchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.tsmi_HelpAbout = new System.Windows.Forms.ToolStripMenuItem();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.tv_Story = new System.Windows.Forms.TreeView();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.ss_MainStatus = new System.Windows.Forms.StatusStrip();
+            this.gb_tasks = new System.Windows.Forms.GroupBox();
+            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
+            this.gb_content = new System.Windows.Forms.GroupBox();
+            this.gb_project = new System.Windows.Forms.GroupBox();
+            this.Tv_Story = new System.Windows.Forms.TreeView();
             this.ms_MainMenu.SuspendLayout();
+            this.gb_tasks.SuspendLayout();
+            this.gb_project.SuspendLayout();
             this.SuspendLayout();
             // 
             // ms_MainMenu
@@ -306,83 +313,90 @@ namespace WebNovelAssistant
             this.tsmi_HelpAbout.Text = "&About...";
             this.tsmi_HelpAbout.Click += new System.EventHandler(this.tsmi_HelpAbout_Click);
             // 
-            // statusStrip1
+            // ss_MainStatus
             // 
-            this.statusStrip1.Location = new System.Drawing.Point(5, 1014);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1894, 22);
-            this.statusStrip1.TabIndex = 1;
-            this.statusStrip1.Text = "statusStrip1";
+            this.ss_MainStatus.Location = new System.Drawing.Point(5, 1014);
+            this.ss_MainStatus.Name = "ss_MainStatus";
+            this.ss_MainStatus.Size = new System.Drawing.Size(1894, 22);
+            this.ss_MainStatus.TabIndex = 1;
+            this.ss_MainStatus.Text = "statusStrip1";
             // 
-            // tv_Story
+            // gb_tasks
             // 
-            this.tv_Story.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.gb_tasks.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gb_tasks.Controls.Add(this.checkedListBox1);
+            this.gb_tasks.Location = new System.Drawing.Point(1673, 32);
+            this.gb_tasks.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
+            this.gb_tasks.Name = "gb_tasks";
+            this.gb_tasks.Padding = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.gb_tasks.Size = new System.Drawing.Size(226, 966);
+            this.gb_tasks.TabIndex = 4;
+            this.gb_tasks.TabStop = false;
+            this.gb_tasks.Text = "Tasks";
+            // 
+            // checkedListBox1
+            // 
+            this.checkedListBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.checkedListBox1.FormattingEnabled = true;
+            this.checkedListBox1.Location = new System.Drawing.Point(3, 21);
+            this.checkedListBox1.Margin = new System.Windows.Forms.Padding(5, 3, 3, 3);
+            this.checkedListBox1.Name = "checkedListBox1";
+            this.checkedListBox1.Size = new System.Drawing.Size(220, 945);
+            this.checkedListBox1.TabIndex = 0;
+            // 
+            // gb_content
+            // 
+            this.gb_content.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.tv_Story.FullRowSelect = true;
-            this.tv_Story.HideSelection = false;
-            this.tv_Story.Indent = 10;
-            this.tv_Story.Location = new System.Drawing.Point(5, 32);
-            this.tv_Story.Margin = new System.Windows.Forms.Padding(5, 3, 3, 3);
-            this.tv_Story.Name = "tv_Story";
+            this.gb_content.Location = new System.Drawing.Point(210, 32);
+            this.gb_content.Name = "gb_content";
+            this.gb_content.Padding = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.gb_content.Size = new System.Drawing.Size(1457, 966);
+            this.gb_content.TabIndex = 5;
+            this.gb_content.TabStop = false;
+            this.gb_content.Text = "Home";
+            // 
+            // gb_project
+            // 
+            this.gb_project.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.gb_project.Controls.Add(this.Tv_Story);
+            this.gb_project.Location = new System.Drawing.Point(8, 32);
+            this.gb_project.Name = "gb_project";
+            this.gb_project.Padding = new System.Windows.Forms.Padding(3, 5, 3, 10);
+            this.gb_project.Size = new System.Drawing.Size(196, 966);
+            this.gb_project.TabIndex = 6;
+            this.gb_project.TabStop = false;
+            this.gb_project.Text = "Your Webnovel";
+            // 
+            // Tv_Story
+            // 
+            this.Tv_Story.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Tv_Story.Location = new System.Drawing.Point(3, 21);
+            this.Tv_Story.Name = "Tv_Story";
             treeNode1.Name = "tvnode_BasicsTitle";
             treeNode1.Text = "Title";
-            treeNode2.ForeColor = System.Drawing.Color.Black;
-            treeNode2.Name = "tvnode_Basics";
-            treeNode2.NodeFont = new System.Drawing.Font("Nirmala UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            treeNode2.Text = "Basics";
-            this.tv_Story.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode2});
-            this.tv_Story.Size = new System.Drawing.Size(199, 979);
-            this.tv_Story.TabIndex = 2;
-            this.tv_Story.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.Tv_Story_NodeMouseClick);
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 10;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(210, 32);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 20;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1686, 979);
-            this.tableLayoutPanel1.TabIndex = 3;
+            treeNode2.Name = "tvnode_BasicsLogline";
+            treeNode2.Text = "Logline";
+            treeNode3.Name = "tvnode_Basics";
+            treeNode3.Text = "Basics";
+            this.Tv_Story.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
+            treeNode3});
+            this.Tv_Story.Size = new System.Drawing.Size(190, 935);
+            this.Tv_Story.TabIndex = 0;
+            this.Tv_Story.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.Tv_Story_NodeMouseClick);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1904, 1041);
-            this.Controls.Add(this.tableLayoutPanel1);
-            this.Controls.Add(this.tv_Story);
-            this.Controls.Add(this.statusStrip1);
+            this.Controls.Add(this.gb_project);
+            this.Controls.Add(this.gb_content);
+            this.Controls.Add(this.gb_tasks);
+            this.Controls.Add(this.ss_MainStatus);
             this.Controls.Add(this.ms_MainMenu);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.ms_MainMenu;
@@ -393,6 +407,8 @@ namespace WebNovelAssistant
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.ms_MainMenu.ResumeLayout(false);
             this.ms_MainMenu.PerformLayout();
+            this.gb_tasks.ResumeLayout(false);
+            this.gb_project.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -430,9 +446,12 @@ namespace WebNovelAssistant
         private System.Windows.Forms.ToolStripMenuItem searchToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.ToolStripMenuItem tsmi_HelpAbout;
-        private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.TreeView tv_Story;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.StatusStrip ss_MainStatus;
+        private System.Windows.Forms.GroupBox gb_tasks;
+        private System.Windows.Forms.GroupBox gb_content;
+        private System.Windows.Forms.GroupBox gb_project;
+        private System.Windows.Forms.CheckedListBox checkedListBox1;
+        private System.Windows.Forms.TreeView Tv_Story;
     }
 }
 

@@ -23,7 +23,27 @@ namespace WebNovelAssistant
 
         private void Tv_Story_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
         {
+            if (e.Node.Name == "tvnode_BasicsTitle")
+            {
+                gb_content.Controls.Clear();
+                var custPan = new CustPanels.TitlePanel
+                {
+                    Dock = DockStyle.Fill
+                };
+                gb_content.Controls.Add(custPan);
+            }
 
+            if (e.Node.Name == "tvnode_BasicsLogline")
+            {
+                gb_content.Controls.Clear();
+                var custPan = new CustPanels.LogLinePanel
+                {
+                    Dock = DockStyle.Fill
+                };
+                gb_content.Controls.Add(custPan);
+            }
         }
     }
+
+
 }

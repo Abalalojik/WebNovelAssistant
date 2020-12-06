@@ -10,4 +10,10 @@
     <RootNamespace>WebNovelAssistant</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Update="CustPanels\LoglinePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+  </ItemGroup>
+
 </Project>

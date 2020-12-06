@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Windows.Forms;
-using lvgcs = System.Windows.Forms.ListViewGroupCollapsedState;
+﻿using System.ComponentModel;
 
 namespace WebNovelAssistant.Tools
 {
